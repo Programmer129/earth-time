@@ -1,0 +1,63 @@
+<html>
+
+<head>
+	<link rel="stylesheet" href="compiled/flipclock.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<script src="compiled/flipclock.js"></script>
+	<script src="compiled/howler.core.js"></script>
+</head>
+
+<body>
+	<audio id="tick" autoplay loop>
+		<source src="tick.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+	<div class="container">
+		<!-- <div style="left: 12%;"> -->
+		<p style="font-size:35px; color:red">Distance between you and any other object is 0 !</p>
+		<!-- </div> -->
+		<img src="finger.png" height="80" width="130" style="margin-right: 5%" class="finger">
+		<audio src="Voice 006.m4a" controls style="margin-left: 5%; margin-bottom: 1%"></audio>
+		<div class="clock">
+			<script type="text/javascript">
+				var clock;
+
+				// var play = document.getElementById("tick");
+				// const sound = new Howl({
+				// 	src: ['tick.mp3']
+				// });
+
+				$(document).ready(function () {
+
+					// Grab the current date
+					var currentDate = new Date();
+
+					// Set some date in the future. In this case, it's always Jan 1
+					var futureDate = new Date(2032, 12, 31);
+
+					// Calculate the difference in seconds between the future and current date
+					var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+					// Instantiate a coutdown FlipClock
+					clock = $('.clock').FlipClock(diff, {
+						clockFace: 'DailyCounter',
+						countdown: true
+					});
+				});
+
+
+				// setTimeout(function() {
+				// 	var id = sound.play();
+				// 	sound.rate(1.5, id);
+				// 	}, 1000);
+			</script>
+		</div>
+		<div>
+			<p style="font-size:100px; color:red">Earth time left</p>
+		</div>
+	</div>
+</body>
+
+</html>
