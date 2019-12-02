@@ -2,6 +2,7 @@
 
 <head>
 	<link rel="stylesheet" href="compiled/flipclock.css">
+	<link rel="stylesheet" href="style.css">
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
@@ -10,54 +11,63 @@
 </head>
 
 <body>
-	<audio id="tick" autoplay loop>
+	<audio id="tick" loop>
 		<source src="tick.mp3" type="audio/mpeg">
 		Your browser does not support the audio element.
 	</audio>
-	<div class="container">
-		<!-- <div style="left: 12%;"> -->
-		<p style="font-size:35px; color:red">Distance between you and any other object is 0 !</p>
-		<!-- </div> -->
-		<img src="finger.png" height="80" width="130" style="margin-right: 5%" class="finger">
-		<audio src="Voice 006.m4a" controls style="margin-left: 5%; margin-bottom: 1%"></audio>
-		<div class="clock">
-			<script type="text/javascript">
-				var clock;
+	<h1 class="lozungi">Distance between you and any other object is 0 !</p>
+		<div class="container">
+			<img src="finger.png" height="80" width="130" class="finger">
+			<audio src="Voice 006.m4a" controls></audio>
+			<div class="earth-time">
+				<p>Earth time left</p>
+			</div>
+			<div class="clock">
 
-				// var play = document.getElementById("tick");
-				// const sound = new Howl({
-				// 	src: ['tick.mp3']
-				// });
+			</div>
 
-				$(document).ready(function () {
+		</div>
 
-					// Grab the current date
-					var currentDate = new Date();
 
-					// Set some date in the future. In this case, it's always Jan 1
-					var futureDate = new Date(2032, 12, 31);
+		<script type="text/javascript">
+			var clock;
 
-					// Calculate the difference in seconds between the future and current date
-					var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+			// var play = document.getElementById("tick");
+			// const sound = new Howl({
+			// 	src: ['tick.mp3']
+			// });
 
-					// Instantiate a coutdown FlipClock
-					clock = $('.clock').FlipClock(diff, {
-						clockFace: 'DailyCounter',
-						countdown: true
-					});
+			$(document).ready(function () {
+
+				// Grab the current date
+				var currentDate = new Date();
+
+
+
+				// Set some date in the future. In this case, it's always Jan 1
+				var futureDate = new Date(2032, 12, 31);
+
+				// Calculate the difference in seconds between the future and current date
+				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+				// Instantiate a coutdown FlipClock
+				clock = $('.clock').FlipClock(diff, {
+					clockFace: 'DailyCounter',
+					countdown: true,
+
 				});
 
+				$('#tick').click(function () {
+					this.resume()
+				});
+			});
 
-				// setTimeout(function() {
-				// 	var id = sound.play();
-				// 	sound.rate(1.5, id);
-				// 	}, 1000);
-			</script>
-		</div>
-		<div>
-			<p style="font-size:100px; color:red">Earth time left</p>
-		</div>
-	</div>
+
+		// setTimeout(function() {
+		// 	var id = sound.play();
+		// 	sound.rate(1.5, id);
+		// 	}, 1000);
+		</script>
 </body>
 
 </html>

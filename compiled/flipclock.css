@@ -1,25 +1,7 @@
 /* Get the bourbon mixin from http://bourbon.io */
 /* Reset */
 
-body {
-  background-color: #000
-}
 
-.container {
-  position: absolute;
-  top:50%;
-  left:50%; 
-  transform:translate(-50%,-50%);
-  text-align: center
-}
-
-.finger {
-  /* position: absolute; */
-  /* top:33%; */
-  /* left:2%;  */
-  /* transform:translate(-30%,-30%); */
-  /* text-align: center */
-}
 
 .flip-clock-wrapper * {
     -webkit-box-sizing: border-box;
@@ -129,7 +111,7 @@ body {
   width: 100%;
   height: 50%;
   font-size: 80px;
-  overflow: hidden; 
+  overflow: hidden;
   outline: 1px solid transparent; }
 
 .flip-clock-wrapper ul li a div .shadow {

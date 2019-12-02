@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+body{
+  background-color: #000;
+}
+
+
+.flip-clock-label {
+  display: none;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.clock{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lozungi {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 3rem;
+}
+.earth-time {
+  margin: 15px;
+}
+.finger {
+  height: 70px;
+}
+@media screen and (max-width: 1400px) {
+  .clock {
+    zoom: 0.8;
+    transform: scale(0.9);
+    -moz-transform: scale(0.9);
+  }
+  .lozungi{
+    font-size: 2.5rem;
+  }
+
+}
+@media screen and (max-width: 1100px) {
+
+  .lozungi{
+    font-size: 2.2rem;
+  }
+  .finger {
+    width: 80px;
+  }
+  audio{
+    width:150px
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .clock {
+    transform: scale(0.8);
+    -moz-transform: scale(0.8);
+  }
+  .lozungi{
+    font-size: 2rem;
+  }
+  .finger {
+    width: 70px;
+  }
+  audio{
+    width:130px
+  }
+}
+@media screen and (max-width: 600px){
+  .clock {
+    transform: scale(0.7);
+    -moz-transform: scale(0.7);
+  }
+}
