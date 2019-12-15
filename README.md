@@ -1,2 +1,0 @@
-# earth-time
-Earth time
