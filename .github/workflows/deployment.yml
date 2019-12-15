@@ -6,23 +6,34 @@ on:
       - master
 
 jobs:
-  build:
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v1
+#      - name: npm install, build, and test
+#        run: |
+#          npm install
+#          npm run build
+#      - name: Archive production artifacts
+#        uses: actions/upload-artifact@v1
+#        with:
+#          name: build
+#          path: build
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
       - name: npm install, build, and test
         run: |
-          npm install
-          npm run build
+            npm install
+            npm run build
       - name: Archive production artifacts
         uses: actions/upload-artifact@v1
         with:
           name: build
           path: build
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
     - uses: actions/checkout@master
     - uses: actions/download-artifact@v1
     - uses: jakejarvis/s3-sync-action@master
