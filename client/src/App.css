@@ -1,0 +1,45 @@
+.App{
+ color:#CC0000;
+ height: 100vh;
+ background-color: #000;
+}
+.timer :last-child .time-separator{
+  display:none;
+}
+.timer{
+  color:#fff;
+  font-size: 3rem;
+}
+.timer .time{
+  border: 2px solid #CC0000;
+  padding: 5px;
+  margin:3px;
+  border-radius: 10px;
+  background-color: #CC0000;
+}
+.finger{
+  font-size: 4rem;
+}
+.earth-time{
+  color:#CC0000;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .header-one{
+    font-size: 1.8rem;
+  }
+  .audio-ee{
+    width: 12rem;
+  }
+  .timer{
+    color:#fff;
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-height: 500px){
+  .App{
+    height: 100%;
+  }
+}
