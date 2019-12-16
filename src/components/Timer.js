@@ -21,7 +21,7 @@ const Timer = () => {
   }
 
   const calculateTimeLeft = () => {
-    const difference = +new Date("2032-12-31") - +new Date();
+    const difference = new Date(2032, 12, 31) - new Date();
     let timeLeft = {};
 
     if (difference > 0) {
